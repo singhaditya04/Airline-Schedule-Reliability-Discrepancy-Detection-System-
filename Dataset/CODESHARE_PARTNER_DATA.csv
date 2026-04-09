@@ -1,0 +1,12 @@
+partner_flight_number,departure_time,arrival_time,status
+EK9000,05:00,07:45,Available
+QR5000,05:00,07:58,Available
+QR5001,05:00,07:20,Available
+QR5002,05:00,07:12,Available
+TK6000,05:07,06:07,Available
+G98000,05:00,06:15,Available
+G98001,05:07,06:34,Available
+BA7000,05:01,07:36,Available
+BA7001,05:00,06:53,Unavailable
+G98002,05:06,06:06,Available
+TK6001,05:00,06:15,Available

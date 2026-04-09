@@ -1,0 +1,12 @@
+flight_id,partner_flight_id,codeshare_partner,departure_time_master,partner_departure_time,arrival_time_master,partner_arrival_time,status,missing_partner_flight,time_mismatch_minutes,not_available,issue_summary,severity
+6E100076,G98002,Air Arabia,1900-01-01 05:06:00,1900-01-01 05:06:00,1900-01-01 06:06:00,1900-01-01 06:06:00,Available,False,0.0,False,OK,OK
+6E100067,BA7001,British Airways,1900-01-01 05:00:00,1900-01-01 05:00:00,1900-01-01 06:53:00,1900-01-01 06:53:00,Unavailable,False,0.0,True,Partner status not Available,High
+6E100002,EK9000,Emirates,1900-01-01 05:00:00,1900-01-01 05:00:00,1900-01-01 07:45:00,1900-01-01 07:45:00,Available,False,0.0,False,OK,OK
+6E100007,QR5000,Qatar Airways,1900-01-01 05:00:00,1900-01-01 05:00:00,1900-01-01 07:58:00,1900-01-01 07:58:00,Available,False,0.0,False,OK,OK
+6E100026,QR5001,Qatar Airways,1900-01-01 05:00:00,1900-01-01 05:00:00,1900-01-01 07:20:00,1900-01-01 07:20:00,Available,False,0.0,False,OK,OK
+6E100027,QR5002,Qatar Airways,1900-01-01 05:00:00,1900-01-01 05:00:00,1900-01-01 07:12:00,1900-01-01 07:12:00,Available,False,0.0,False,OK,OK
+6E100028,TK6000,Turkish Airlines,1900-01-01 05:07:00,1900-01-01 05:07:00,1900-01-01 06:07:00,1900-01-01 06:07:00,Available,False,0.0,False,OK,OK
+6E100032,G98000,Air Arabia,1900-01-01 05:00:00,1900-01-01 05:00:00,1900-01-01 06:15:00,1900-01-01 06:15:00,Available,False,0.0,False,OK,OK
+6E100041,G98001,Air Arabia,1900-01-01 05:07:00,1900-01-01 05:07:00,1900-01-01 06:34:00,1900-01-01 06:34:00,Available,False,0.0,False,OK,OK
+6E100047,BA7000,British Airways,1900-01-01 05:01:00,1900-01-01 05:01:00,1900-01-01 07:36:00,1900-01-01 07:36:00,Available,False,0.0,False,OK,OK
+6E100088,TK6001,Turkish Airlines,1900-01-01 05:00:00,1900-01-01 05:00:00,1900-01-01 06:15:00,1900-01-01 06:15:00,Available,False,0.0,False,OK,OK

@@ -1,0 +1,9 @@
+metric,value
+total_master_flights,100.0
+total_codeshare_flights,11.0
+schedule_accuracy_pct,75.0
+discrepancy_rate_pct,25.0
+codeshare_health_pct,90.91
+critical_issue_count,0.0
+critical_schedule_issues,0.0
+critical_codeshare_issues,0.0

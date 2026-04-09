@@ -1,0 +1,42 @@
+2026-04-09 17:32:33,116 | INFO | indigogo | Starting Airline Schedule Validation pipeline
+2026-04-09 17:32:33,269 | ERROR | indigogo | Pipeline execution failed: MASTER_SCHEDULE.csv is missing required columns: flight_id, partner_flight_id
+Traceback (most recent call last):
+  File "C:\Users\KIIT\Documents\IndigoGoProject\main.py", line 18, in main
+    datasets = load_data(DEFAULT_INPUT_PATHS)
+  File "C:\Users\KIIT\Documents\IndigoGoProject\src\data\loader.py", line 29, in load_data
+    df = load_csv(filepath, expected_columns)
+  File "C:\Users\KIIT\Documents\IndigoGoProject\src\data\loader.py", line 13, in load_csv
+    validate_schema(df, expected_columns, filepath.name)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KIIT\Documents\IndigoGoProject\src\data\validator.py", line 14, in validate_schema
+    raise DataValidationError(
+        f"{dataset_name} is missing required columns: {', '.join(missing)}"
+    )
+src.data.validator.DataValidationError: MASTER_SCHEDULE.csv is missing required columns: flight_id, partner_flight_id
+2026-04-09 18:00:22,510 | INFO | indigogo | Starting Airline Schedule Validation pipeline
+2026-04-09 18:00:22,799 | INFO | indigogo | Successfully loaded datasets: master, published, codeshare
+2026-04-09 18:00:30,647 | INFO | indigogo | Schedule validation complete. Total flights processed: 100000
+2026-04-09 18:00:32,498 | INFO | indigogo | Codeshare validation complete. Total codeshare records: 34874
+2026-04-09 18:00:32,586 | INFO | indigogo | KPI computation complete.
+2026-04-09 18:00:33,517 | INFO | indigogo | Exported results to: {'schedule_report': WindowsPath('C:/Users/KIIT/Documents/IndigoGoProject/output/schedule_report.csv'), 'codeshare_report': WindowsPath('C:/Users/KIIT/Documents/IndigoGoProject/output/codeshare_report.csv'), 'kpi_summary': WindowsPath('C:/Users/KIIT/Documents/IndigoGoProject/output/kpi_summary.csv')}
+2026-04-09 18:01:11,178 | INFO | indigogo | ========== PIPELINE START ==========
+2026-04-09 18:01:11,467 | INFO | indigogo | Loaded datasets: ['master', 'published', 'codeshare']
+2026-04-09 18:01:19,516 | INFO | indigogo | Schedule validation: 100000 flights, 38303 with issues
+2026-04-09 18:01:21,522 | INFO | indigogo | Codeshare validation: 34874 codeshare flights
+2026-04-09 18:01:21,615 | INFO | indigogo | KPIs computed
+2026-04-09 18:01:22,649 | INFO | indigogo | Output files: schedule_report.csv, codeshare_report.csv, kpi_summary.csv
+2026-04-09 18:01:22,674 | INFO | indigogo | ========== PIPELINE SUCCESS ==========
+2026-04-09 18:09:14,100 | INFO | indigogo | Starting Airline Schedule Validation pipeline
+2026-04-09 18:09:14,504 | INFO | indigogo | Successfully loaded datasets: master, published, codeshare
+2026-04-09 18:09:22,389 | INFO | indigogo | Schedule validation complete. Total flights processed: 100000
+2026-04-09 18:09:24,211 | INFO | indigogo | Codeshare validation complete. Total codeshare records: 34874
+2026-04-09 18:09:24,295 | INFO | indigogo | KPI computation complete.
+2026-04-09 18:09:25,181 | INFO | indigogo | Exported results to: C:\Users\KIIT\Documents\IndigoGoProject\output
+2026-04-09 18:09:25,203 | INFO | indigogo | Pipeline completed successfully.
+2026-04-09 18:14:32,324 | INFO | indigogo | Starting Airline Schedule Validation pipeline
+2026-04-09 18:14:32,362 | INFO | indigogo | Successfully loaded datasets: master, published, codeshare
+2026-04-09 18:14:32,403 | INFO | indigogo | Schedule validation complete. Total flights processed: 100
+2026-04-09 18:14:32,419 | INFO | indigogo | Codeshare validation complete. Total codeshare records: 11
+2026-04-09 18:14:32,424 | INFO | indigogo | KPI computation complete.
+2026-04-09 18:14:32,437 | INFO | indigogo | Exported results to: C:\Users\KIIT\Documents\IndigoGoProject\output
+2026-04-09 18:14:32,446 | INFO | indigogo | Pipeline completed successfully.
