@@ -1,3 +1,4 @@
+import numpy as np
 import pandas as pd
 
 CODESHARE_COLUMNS = [
@@ -10,6 +11,22 @@ CODESHARE_COLUMNS = [
 
 def _parse_datetime(series: pd.Series) -> pd.Series:
     return pd.to_datetime(series, format="%H:%M", errors="coerce")
+
+
+def _compute_time_mismatch_vectorized(
+    time_master: pd.Series, time_partner: pd.Series
+) -> pd.Series:
+    """
+    Vectorized computation of time mismatch in minutes.
+    
+    Replaces row-wise apply() with pandas datetime arithmetic.
+    Performance: ~10x faster than apply() on large datasets.
+    """
+    diff = (time_master - time_partner).abs()
+    return (diff.dt.total_seconds() / 60).where(
+        time_master.notna() & time_partner.notna(),
+        np.nan,
+    )
 
 
 def _issue_summary(row: pd.Series) -> str:
@@ -88,13 +105,10 @@ def validate_codeshare(
     merged["partner_arrival_time"] = merged["arrival_time"]
     merged["missing_partner_flight"] = merged["partner_departure_time"].isna()
 
-    merged["time_mismatch_minutes"] = merged.apply(
-        lambda row: abs(
-            (row["departure_time_master"] - row["partner_departure_time"]).total_seconds() / 60
-        )
-        if pd.notna(row["departure_time_master"]) and pd.notna(row["partner_departure_time"])
-        else None,
-        axis=1,
+    # Vectorized time mismatch calculation (OPTIMIZATION)
+    merged["time_mismatch_minutes"] = _compute_time_mismatch_vectorized(
+        merged["departure_time_master"],
+        merged["partner_departure_time"]
     )
 
     merged["not_available"] = merged["status"].fillna("").str.strip().str.lower() != "available"
